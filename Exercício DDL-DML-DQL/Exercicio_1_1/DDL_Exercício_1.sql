@@ -1,0 +1,31 @@
+-- Criar Banco
+CREATE DATABASE Exercicio_1_1;
+
+-- Usar o Banco criado
+USE Exercicio_1_1;
+
+-- Criar Tabelas
+CREATE TABLE Pessoa
+(
+	IdPessoa INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(20) NOT NULL,
+	CNH VARCHAR(10) NOT NULL UNIQUE
+);
+
+CREATE TABLE Telefone
+(
+	IdTelefone INT PRIMARY KEY IDENTITY,
+	IdPessoa INT FOREIGN KEY REFERENCES Pessoa(IdPessoa) NOT NULL,
+	Numero VARCHAR(20) NOT NULL UNIQUE
+);
+
+CREATE TABLE Email
+(
+	IdEmail INT PRIMARY KEY IDENTITY,
+	IdPessoa INT FOREIGN KEY REFERENCES Pessoa(IdPessoa) NOT NULL,
+	Endereco VARCHAR(30) NOT NULL UNIQUE
+);
+
+SELECT * FROM Pessoa
+SELECT * FROM Telefone
+SELECT * FROM Email

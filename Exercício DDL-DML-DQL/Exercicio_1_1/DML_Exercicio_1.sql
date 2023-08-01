@@ -1,0 +1,20 @@
+-- DML - INSERIR DADOS NAS TABELAS
+
+--USE O BANCO CRIADO
+USE Exercicio_1_1
+
+-- INSERIR DADOS NA TABELA
+INSERT INTO Pessoa(Nome,CNH)
+VALUES('Carlos','1234567890'),('Eduardo','1234567000')
+-- Ou
+-- INSERT INTO Pessoa VALUES('Carlos','1234567890')
+
+INSERT INTO Email(IdPessoa,Endereco)
+VALUES(1,'carlos@gmail'),(2,'eduardo@gmail')
+
+INSERT INTO Telefone(IdPessoa,Numero)
+VALUES(1,'11 990099'),(2,'11 980980')
+
+-- DELETAR DADOS DE UMA TABELA
+DELETE FROM Email 
+    WHERE Endereco = '11 9090090'
