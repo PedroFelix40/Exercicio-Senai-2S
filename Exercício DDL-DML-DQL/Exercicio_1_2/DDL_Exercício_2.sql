@@ -48,15 +48,16 @@ CREATE TABLE Aluguel
 	IdVeiculo INT FOREIGN KEY REFERENCES Veiculo(IdVeiculo) NOT NULL,
 	IdCliente INT FOREIGN KEY REFERENCES Cliente(IdCliente) NOT NULL,
 	Valor VARCHAR(10) NOT NULL,
-	DataAluguel VARCHAR(10) NOT NULL
+	DataInicio VARCHAR(10) NOT NULL,
+	DataFim VARCHAR(10) NOT NULL
 );
 
-select 
+select
+
 * 
 from 
-Veiculo
 Cliente,
 Empresa,
-Modelo,
+,
 Marca
 DROP TABLE Aluguel
