@@ -1,0 +1,45 @@
+CREATE DATABASE Exercicio_1_4
+
+USE Exercicio_1_4
+
+-- PRIMARY KEY--------------------------
+CREATE TABLE Artistas
+(
+	IdArtista INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Usuarios
+(
+	IdUsuario INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(20) NOT NULL,
+	Email VARCHAR(20) NOT NULL UNIQUE,
+	Senha VARCHAR(20) NOT NULL,
+	Permissao VARCHAR NOT NULL
+);
+
+CREATE TABLE Estilos
+(
+	IdEstilo INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(20) NOT NULL
+);
+---------------------------------------
+--FOREIGN KEY
+
+CREATE TABLE AlbunsEstilos
+(
+	IdAlbum INT PRIMARY KEY IDENTITY,
+	IdEstilo INT FOREIGN KEY REFERENCES Estilos(IdEstilo) NOT NULL
+);
+
+CREATE TABLE Albuns
+(
+	IdAlbum INT PRIMARY KEY IDENTITY,
+	IdArtista INT FOREIGN KEY REFERENCES Artistas(IdArtista) NOT NULL,
+	Titulo VARCHAR(20) NOT NULL,
+	DataLancamento VARCHAR(20) NOT NULL,
+	Localizacao VARCHAR(20) NOT NULL,
+	QtdMinutos VARCHAR(20) NOT NULL,
+	Ativo  VARCHAR(20) NOT NULL
+);
+
