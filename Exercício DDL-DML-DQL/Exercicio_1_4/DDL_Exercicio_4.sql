@@ -1,3 +1,6 @@
+--DDL
+
+-- CRIAR BANDO DE DAdOs
 CREATE DATABASE Exercicio_1_4
 
 USE Exercicio_1_4
